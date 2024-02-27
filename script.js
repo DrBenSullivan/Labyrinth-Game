@@ -1,3 +1,7 @@
+//Create arrays to store done and to-be-done goals.
+const ToDo = ['sp0', 'sp1', 'sp2', 'sp3', 'sp4', 'sp5', 'sp6', 'sp7', 'sp8'];
+const Done = [];
+
 // Assign buttons to constants.
 const upButton = document.getElementById("up"),
       downButton = document.getElementById("down"),
@@ -60,6 +64,7 @@ const refreshTiles = (x, y) => {
     player.cartCoords = coords;
     const tileId = getTile(coords);
     updateTiles(tileId);
+    checkIfGoalTile(tileId);
 };
 
 // Function to set button states based on player position
@@ -105,6 +110,48 @@ const goRight = () => {
     changeXCoord(newXCoord);
 };
 
+
+//Define functions to randomise a goal and update its tile's style when selected and reached. 
+const generateRandomGoal = () => {
+    let goal;
+    while (goal === player.occupiedTile || !ToDo.includes(goal)) {
+        let index = Math.floor(Math.random() * ToDo.length);
+        goal = ToDo[index]
+    }
+    return goal;
+}
+
+const hightlightGoal = (goal) => {
+    const goalTile = document.getElementById(goal);
+    goalTile.classList.add("goal");
+}
+
+const getGoal = () => {
+    if (Done.length === 9){
+        alert("You Win!");
+    }
+    const goal = generateRandomGoal();
+    hightlightGoal(goal);
+    return goal;
+}
+
+const checkIfGoalTile = (tile) => {
+    if (tile !== goalTile) {
+        return
+    } else {
+        goalReached(tile);
+        goalTile = getGoal();
+    }
+}
+
+const goalReached = (tile) => {
+    const doneTile = document.getElementById(tile);
+    doneTile.classList.replace("goal", "done");
+    Done.push(tile);
+    const index = ToDo.indexOf(tile);
+    ToDo.splice(index, 1);
+}
+
 // Assign player element.
 const player = document.getElementById("player");
 
@@ -120,3 +167,5 @@ player.start = () => {
 };
 
 player.start();
+let goalTile;
+goalTile = getGoal();
