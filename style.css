@@ -1,0 +1,77 @@
+body{
+    background-color: #000000;
+    color: #636363;
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.h1{
+    font-size:32px;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.container {
+    margin-top: 0;
+    padding: 0;
+}
+
+.player {
+    background-color: #0000ff;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 2px solid #1d1d1d;
+    border-radius: 4px;
+    z-index: top;
+    position: relative;
+    top: 92px;
+    left: 72px;
+    transition: 0.2s ease-in-out;
+}
+
+.grid {
+    display: grid;
+    width: fit-content;
+    padding: 0;
+    gap: 0;
+    border: 2px solid #3d3d3d;
+    background-color: #636363;
+    grid-template-columns: repeat(5,32px);
+    grid-template-rows: repeat(5,32px);
+    grid-template-areas: 
+    "#sp0   #cor0   #sp1    #cor1   #sp2"
+    "#cor2  .wall   #cor3   .wall   #cor4"
+    "#sp3   #cor5   #sp4    #cor6   #sp5"
+    "#cor7  .wall   #cor8   .wall   #cor9" 
+    "#sp6   #cor10  #sp7    #cor11  #sp8";
+    border-collapse: collapse;
+}
+
+.space {
+
+    &.goal {
+        border: 2px solid #ffff00;
+    }
+
+    &.done {
+        background-color: #ffff00;
+    }
+
+    &.occupied {
+    background-color: #7070ee;
+    }
+}
+
+.corridor {
+    background-color: #ffffff;
+
+    & .blocked {
+        background-color: #a52a2a;
+    }
+}
+
+.wall {
+    background-color: #000;
+    border: 2px solid #3d3d3d;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Labyrinth</title>
+    </head>
+    <body>
+        <h1 >Labyrinth</h1>
+        <!--game grid-->
+        <div class="container">
+            <div id="player" class="player"></div>
+            <div class="grid">
+
+                <!--first row-->
+                <div class="space" id="sp0"></div>
+                <div class="corridor" id="cor0"></div>
+                <div class="space" id="sp1"></div>
+                <div class="corridor" id="cor1"></div>
+                <div class="space" id="sp2"></div>
+
+                <!--second row-->
+                <div class="corridor" id="cor2"></div>
+                <div class="wall"></div>
+                <div class="corridor" id="cor3"></div>
+                <div class="wall"></div>
+                <div class="corridor" id="cor4"></div>
+                
+                <!--third row-->
+                <div class="space" id="sp3"></div>
+                <div class="corridor" id="cor5"></div>
+                <div class="space" id="sp4"></div>
+                <div class="corridor" id="cor6"></div>
+                <div class="space" id="sp5"></div>
+
+                <!--fourth row-->
+                <div class="corridor" id="cor7"></div>
+                <div class="wall"></div>
+                <div class="corridor" id="cor8"></div>
+                <div class="wall"></div>
+                <div class="corridor" id="cor9"></div>
+
+                <!--third row-->
+                <div class="space" id="sp6"></div>
+                <div class="corridor" id="cor10"></div>
+                <div class="space" id="sp7"></div>
+                <div class="corridor" id="cor11"></div>
+                <div class="space" id="sp8"></div>
+            </div>
+        </div>
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+        <p id="output"></p>
+    <script src="script.js"></script>
+    </body>
+</html>
