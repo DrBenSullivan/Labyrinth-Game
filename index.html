@@ -5,8 +5,43 @@
         <title>Labyrinth</title>
     </head>
     <body>
-        <h1 >Labyrinth</h1>
-        <!--game grid-->
+        <h1>Labyrinth</h1>
+        <div class="intro" id="intro">
+            <div id="intro-header">
+                Welcome to Labyrinth
+            </div>
+            <div id ="intro-body">
+                Can you fully explore the Labyrinth by reaching all of the goal tiles in order?
+                <br><br><br>
+                Simple but, not be fooled; the Labyrinth is known to change, confuse & frustrate...
+            </div>
+            <div id="intro-footer">
+                <button id="enter">Enter The Labyrinth</button>
+            </div>
+        </div>
+
+        <div class="victory" id="victory" style="visibility: hidden;">
+            <div id="victory-header">
+                FLAWLESS VICTORY!!!
+            </div>
+            <div id="victory-footer">
+                <button id="reset-win">
+                    Enter again...?
+                </button>
+            </div>
+        </div>
+
+        <div class="loss" id="loss" style="visibility: hidden;">
+            <div id="loss-header">
+                YOU DIED
+            </div>
+            <div id="loss-footer">
+                <button id="reset-loss">
+                    Try again?
+                </button>
+            </div>
+        </div>
+
         <div class="container">
             <div id="player" class="player"></div>
             <div class="board-grid">
@@ -20,7 +55,7 @@
 
                 <!--second row-->
                 <div class="corridor" id="cor2"></div>
-                <div class="wall"></div>
+               <div class="wall"></div>
                 <div class="corridor" id="cor3"></div>
                 <div class="wall"></div>
                 <div class="corridor" id="cor4"></div>

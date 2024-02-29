@@ -8,7 +8,127 @@ h1{
     font-size:32px;
     text-align: center;
     color: #3d3d3d;
-    text-shadow: #636363 1px 1px;   
+    text-shadow: #636363 1px 1px;
+}
+
+.intro {  
+    opacity: 90%;
+    background-color: #000000;
+    border: 2px solid #3d3d3d;
+    color: #3d3d3d;
+    position: absolute;
+    min-width: fit-content;
+    min-height: 300px;
+    padding: 8px;
+    gap: 16px;
+    left: 20%;
+    right: 20%;
+    z-index: 4;
+    overflow:none;
+    display: grid;
+    gap: 0;
+    grid-template-rows: 
+    "div"
+    "div"
+    "div";
+    grid-template-rows: 20% 60% 20%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+#intro-header {
+    font-size: 24px;
+    font-weight: bolder;
+    overflow: none;
+    text-wrap:nowrap;
+    min-width: max-content;
+}
+
+#intro-body {
+    vertical-align: middle;
+    padding: 8px;
+}
+
+#intro-footer {
+    vertical-align: middle;
+}
+
+.victory {  
+    opacity: 90%;
+    background-color: #000000;
+    border: 2px solid #ffff00;
+    color: #ffff00;
+    position: absolute;
+    min-width: fit-content;
+    min-height: 300px;
+    padding: 8px;
+    gap: 16px;
+    left: 20%;
+    right: 20%;
+    z-index: 4;
+    overflow:none;
+    display: grid;
+    gap: 0;
+    grid-template-rows: 
+    "div"
+    "div";
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+#victory-header {
+    font-size: 24px;
+    font-weight: bolder;
+    overflow: none;
+    text-wrap:nowrap;
+    min-width: max-content;
+}
+
+#victory-footer {
+    vertical-align: middle;
+}
+
+.loss {  
+    opacity: 90%;
+    background-color: #000000;
+    border: 2px solid #920e0e;
+    color: #920e0e;
+    position: absolute;
+    min-width: fit-content;
+    min-height: 300px;
+    padding: 8px;
+    gap: 16px;
+    left: 20%;
+    right: 20%;
+    z-index: 4;
+    overflow:none;
+    display: grid;
+    gap: 0;
+    grid-template-rows: 
+    "div"
+    "div";
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+#loss-header {
+    font-size: 24px;
+    font-weight: bolder;
+    overflow: none;
+    text-wrap: nowrap;
+    min-width: max-content;
+}
+
+#loss-footer {
+    vertical-align: middle;
 }
 
 .container {
@@ -25,13 +145,13 @@ h1{
     width: 16px;
     height: 16px;
     padding: 0;
-    border: 2px solid #1d1d1d;
+    border: 2px solid #3d3d3d;
     border-radius: 4px;
-    z-index: top;
+    z-index: 3;
     position: relative;
     top: 92px;
     left: 72px;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .board-grid {
@@ -39,7 +159,7 @@ h1{
     width: fit-content;
     gap: 0;
     border: 2px solid #3d3d3d;
-    background-color: #636363;
+    background-color: #a3a3a3;
     grid-template-columns: repeat(5,32px);
     grid-template-rows: repeat(5,32px);
     grid-template-areas: 
@@ -53,6 +173,8 @@ h1{
 
 .space {
     transition: 0.5s;
+    background-color: #7d7d7d
+    ;
 
     &.goal {
         border: 5px groove #ffff0081;
@@ -72,9 +194,11 @@ h1{
 }
 
 .corridor {
-    background-color: #ffffff;
+    transition: 0.5s;
+    background-color: #a3a3a3;
 
-    & .blocked {
+    &.blocked {
+        z-index: 1;
         background-color: #a52a2a;
     }
 }
@@ -82,6 +206,7 @@ h1{
 .wall {
     background-color: #000;
     border: 2px solid #3d3d3d;
+    border-radius: 4px;
 }
 
 .button-grid {
@@ -101,10 +226,15 @@ h1{
     border-collapse: collapse;
 }
 
-button {
-    color: #3d3d3d;
+#left, #right, #up, #down {
+    color: #000000;
     font-weight: bolder;
     height: auto;
     width: auto;
     border: 2px solid #3d3d3d;
+    background-color: #a3a3a3;
+
+    &:disabled{
+        background-color: #3d3d3d;
+    }
 }
